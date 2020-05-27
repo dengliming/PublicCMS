@@ -33,7 +33,7 @@
         <version.jacksondatabind>2.11.0</version.jacksondatabind>
         <!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
         <!-- http://hibernate.org/orm/releases/ -->
-        <version.hibernate>5.4.12.Final</version.hibernate>
+        <version.hibernate>5.4.15.Final</version.hibernate>
         <!-- http://mvnrepository.com/artifact/org.hibernate/hibernate-search-orm -->
         <!-- http://hibernate.org/search/releases/ -->
         <version.hibernateSearch>5.11.5.Final</version.hibernateSearch>
