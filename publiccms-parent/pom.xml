@@ -44,7 +44,7 @@
         <!-- http://mvnrepository.com/artifact/org.mybatis/mybatis -->
         <version.mybatis>3.5.4</version.mybatis>
         <!-- http://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
-        <version.mybatisSpring>2.0.3</version.mybatisSpring>
+        <version.mybatisSpring>2.0.4</version.mybatisSpring>
         <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene -->
         <version.lucene>5.5.5</version.lucene>
         <!-- http://mvnrepository.com/artifact/redis.clients/jedis -->
