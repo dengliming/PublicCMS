@@ -37,7 +37,7 @@
 <#else>
     <@cms.category id=value><#assign values=object/></@cms.category>
     <#if 'view'=type>
-        ${(value)!}:${(values=object.name)!}
+        ${(value)!}:${(values.name)!}
     <#else>
         <input name="${inputName}" value="${(value)!}" type="hidden"/>
         <input name="${extend.id.code}_categoryName" readonly="readonly" size="30" value="${(values.name)!}" type="text" class="<#if extend.required> required</#if>"/>
