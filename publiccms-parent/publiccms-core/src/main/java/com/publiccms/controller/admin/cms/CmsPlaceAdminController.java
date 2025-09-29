@@ -46,6 +46,7 @@ import com.publiccms.logic.component.exchange.PlaceExchangeComponent;
 import com.publiccms.logic.component.exchange.PlaceExportComponent;
 import com.publiccms.logic.component.exchange.PlaceImportComponent;
 import com.publiccms.logic.component.site.SiteComponent;
+import com.publiccms.logic.component.site.StatisticsComponent;
 import com.publiccms.logic.component.template.MetadataComponent;
 import com.publiccms.logic.component.template.TemplateComponent;
 import com.publiccms.logic.service.cms.CmsEditorHistoryService;
@@ -96,6 +97,8 @@ public class CmsPlaceAdminController {
     private PlaceExportComponent exportComponent;
     @Resource
     private PlaceImportComponent importComponent;
+    @Resource
+    private StatisticsComponent statisticsComponent;
     @Resource
     private SysWorkflowProcessItemService workflowProcessItemService;
     @Resource
@@ -155,6 +158,7 @@ public class CmsPlaceAdminController {
                             && (entity.getClicks() < entity.getMaxClicks() || 0 == entity.getMaxClicks())) {
                         service.shelf(entity.getId(), true);
                     }
+                    statisticsComponent.removePlace(entity.getId());
                     logOperateService.save(new LogOperate(site.getId(), admin.getId(), admin.getDeptId(),
                             LogLoginService.CHANNEL_WEB_MANAGER, "update.place", RequestUtils.getIpAddress(request),
                             CommonUtils.getDate(), JsonUtils.getString(entity)));
