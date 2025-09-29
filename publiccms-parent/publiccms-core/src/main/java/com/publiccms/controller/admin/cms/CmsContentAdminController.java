@@ -67,6 +67,7 @@ import com.publiccms.logic.component.exchange.ContentExchangeComponent;
 import com.publiccms.logic.component.exchange.ContentExportComponent;
 import com.publiccms.logic.component.exchange.SiteExchangeComponent;
 import com.publiccms.logic.component.site.SiteComponent;
+import com.publiccms.logic.component.site.StatisticsComponent;
 import com.publiccms.logic.component.template.ModelComponent;
 import com.publiccms.logic.component.template.TemplateComponent;
 import com.publiccms.logic.service.cms.CmsCategoryModelService;
@@ -124,6 +125,8 @@ public class CmsContentAdminController {
     private ContentExchangeComponent exchangeComponent;
     @Resource
     private ContentExportComponent exportComponent;
+    @Resource
+    private StatisticsComponent statisticsComponent;
     @Resource
     private SysWorkflowProcessItemService workflowProcessItemService;
     @Resource
@@ -188,6 +191,7 @@ public class CmsContentAdminController {
             if (ControllerUtils.errorCustom("statusError", CmsContentService.STATUS_CHECKING == oldEntity.getStatus(), model)) {
                 return CommonConstants.TEMPLATE_ERROR;
             }
+            statisticsComponent.removeContent(entity.getId());
         }
 
         entity = service.saveTagAndAttribute(site, admin.getId(), admin.getDeptId(), entity, contentParameters, cmsModel,
