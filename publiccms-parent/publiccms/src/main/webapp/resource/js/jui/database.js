@@ -196,9 +196,9 @@
                                     if (liAttr ) {
                                         liAttr += ",";
                                     }
-                                    liAttr += "'" + key + "':'" + this[key] + "'";
+                                    liAttr += "\"" + key + "\":\""+ this[key] + "\"";
                                 }
-                                html += "<li lookupAttrs=\"" + escapeHtml(liAttr) + "\">" + escapeHtml(liLabel) + "</li>";
+                                html += "<li lookupAttrs='" + escapeHtml(liAttr) + "'>" + escapeHtml(liLabel) + "</li>";
                             });
                             var $lis = $suggest.html("<ul>" + html + "</ul>").find("li");
                             $lis.on("click", function() {
@@ -217,9 +217,9 @@
                                     if (jsonStr ) {
                                         jsonStr += ",";
                                     }
-                                    jsonStr += "'" + suggestFields[i] + "':''";
+                                    jsonStr += "\"" + suggestFields[i] + "\":\"\"";
                                 }
-                                jsonStr = "{'" + _lookup.pk + "':''," + jsonStr + "}";
+                                jsonStr = "{\"" + _lookup.pk + "\":\"\"," + jsonStr + "}";
                                 $.bringBackSuggest(JUI.jsonEval(jsonStr),callbackFields);
                             }
                         }, error: function() {
