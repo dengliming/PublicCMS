@@ -65,7 +65,7 @@ import com.publiccms.views.pojo.model.ExtendDataParameters;
 import freemarker.template.TemplateException;
 
 /**
- * 
+ *
  * cmsPlaceController
  *
  */
@@ -191,7 +191,7 @@ public class CmsPlaceAdminController {
             if (null != metadata.getWorkflowId()) {
                 SysWorkflowProcessItem item = workflowProcessItemService.getEntity(
                         new SysWorkflowProcessItemId(SysWorkflowProcessService.ITEM_TYPE_PLACE, String.valueOf(entity.getId())));
-                if (null == item || null != oldEntity && CmsPlaceService.STATUS_NORMAL == oldEntity.getStatus()) {
+                if (null == item || null != oldEntity && CmsPlaceService.STATUS_PEND == oldEntity.getStatus()) {
                     SysWorkflowProcess process = workflowProcessService.createProcess(site.getId(), metadata.getWorkflowId(),
                             admin.getId(), entity.getTitle(), SysWorkflowProcessService.ITEM_TYPE_PLACE,
                             String.valueOf(entity.getId()));
