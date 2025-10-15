@@ -16,6 +16,7 @@ import com.publiccms.common.base.AbstractTemplateDirective;
 import com.publiccms.common.handler.RenderHandler;
 
 import freemarker.template.TemplateException;
+
 /**
  *
  * TradeAddressDirective
@@ -36,7 +37,8 @@ public class TradeAddressDirective extends AbstractTemplateDirective {
             Long[] ids = handler.getLongArray("ids");
             if (CommonUtils.notEmpty(ids)) {
                 List<TradeAddress> entityList = service.getEntitys(ids);
-                Map<String, TradeAddress> map = CommonUtils.listToMapSorted(entityList, k -> k.getId().toString(), ids);
+                Map<String, TradeAddress> map = CommonUtils.listToMapSorted(entityList, k -> k.getId().toString(), ids,
+                        e -> e.getId());
                 handler.put("map", map).render();
             }
         }

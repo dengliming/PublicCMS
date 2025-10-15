@@ -49,7 +49,7 @@ public class SysWorkflowProcessItemDirective extends AbstractTemplateDirective {
                     }
                     List<SysWorkflowProcessItem> entityList = workflowProcessItemService.getEntitys(entityIds);
                     Map<String, SysWorkflowProcessItem> map = CommonUtils.listToMapSorted(entityList,
-                            k -> String.valueOf(k.getId().getItemId()), itemIds);
+                            k -> String.valueOf(k.getId().getItemId()), itemIds, e -> e.getId());
                     handler.put("map", map).render();
                 }
             }
