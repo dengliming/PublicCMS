@@ -21,7 +21,7 @@
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-        <version.publiccms>V5.202506.b</version.publiccms>
+        <version.publiccms>V5.202506.c</version.publiccms>
         <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
         <version.servlet>6.1.0</version.servlet>
         <!-- http://mvnrepository.com/artifact/org.springframework/spring-core -->
@@ -31,7 +31,7 @@
         <!-- https://spring.io/projects/spring-boot -->
         <version.springBoot>3.5.4</version.springBoot>
         <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine -->
-        <version.juint>5.13.4</version.juint>
+        <version.juint>6.0.0</version.juint>
         <!-- http://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
         <!-- http://hibernate.org/orm/releases/ -->
         <version.hibernate>7.0.8.Final</version.hibernate>
@@ -55,7 +55,7 @@
         <!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
         <version.ehcache>3.10.8</version.ehcache>
         <!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-        <version.jackson>2.19.2</version.jackson>
+        <version.jackson>2.20.0</version.jackson>
         <!-- http://mvnrepository.com/artifact/org.freemarker/freemarker -->
         <version.freemarker>2.3.34</version.freemarker>
         <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
@@ -63,7 +63,7 @@
         <version.lucene>9.12.2</version.lucene>
         <!-- http://mvnrepository.com/artifact/redis.clients/jedis -->
         <!-- https://github.com/redis/jedis -->
-        <version.jedis>6.0.0</version.jedis>
+        <version.jedis>7.0.0</version.jedis>
         <!-- http://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
         <version.quartz>2.5.0</version.quartz>
         <!-- https://mvnrepository.com/artifact/com.zaxxer/HikariCP -->
@@ -83,17 +83,17 @@
         <!-- http://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
         <version.collections>4.5.0</version.collections>
         <!-- http://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
-        <version.lang>3.18.0</version.lang>
+        <version.lang>3.19.0</version.lang>
         <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
         <version.io>2.20.0</version.io>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-text -->
         <version.text>1.14.0</version.text>
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-compress -->
-        <version.compress>1.27.1</version.compress>
+        <version.compress>1.28.0</version.compress>
         <!-- http://mvnrepository.com/artifact/commons-codec/commons-codec -->
         <version.codec>1.19.0</version.codec>
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
-        <version.log4j>2.25.1</version.log4j>
+        <version.log4j>2.25.2</version.log4j>
         <!-- https://mvnrepository.com/artifact/org.jboss.logging/jboss-logging -->
         <version.jbossLogging>3.6.1.Final</version.jbossLogging>
         <!-- https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor -->
