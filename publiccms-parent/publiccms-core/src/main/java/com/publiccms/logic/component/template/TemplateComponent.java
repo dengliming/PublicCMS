@@ -246,7 +246,8 @@ public class TemplateComponent implements Cache, AdminContextPath {
     public boolean createContentFile(SysSite site, CmsContent entity, CmsCategory category, CmsCategoryModel categoryModel)
             throws IOException, TemplateException {
         if (null != site && null != entity) {
-            if (entity.isOnlyUrl()) {
+            CmsModel model = modelComponent.getModel(site, entity.getModelId());
+            if (null != model && model.isOnlyUrl()) {
                 if (null == entity.getParentId() && null != entity.getQuoteContentId()) {
                     CmsContent quote = contentService.getEntity(entity.getQuoteContentId());
                     if (null != quote) {
@@ -261,8 +262,8 @@ public class TemplateComponent implements Cache, AdminContextPath {
                     categoryModel = categoryModelService
                             .getEntity(new CmsCategoryModelId(entity.getCategoryId(), entity.getModelId()));
                 }
-                CmsModel model = modelComponent.getModel(site, entity.getModelId());
-                if (null != categoryModel && null != category && null != model) {
+
+                if (null != categoryModel && null != category) {
                     String contentPath = null;
                     String templatePath = null;
                     if (categoryModel.isCustomContentPath()) {
@@ -392,7 +393,7 @@ public class TemplateComponent implements Cache, AdminContextPath {
 
     /**
      * 生成页面片段路径
-     * 
+     *
      * @param filepath
      * @param category
      * @param model
@@ -641,7 +642,7 @@ public class TemplateComponent implements Cache, AdminContextPath {
 }
 
 /**
- * 
+ *
  * PublishTask 静态化线程
  *
  */
