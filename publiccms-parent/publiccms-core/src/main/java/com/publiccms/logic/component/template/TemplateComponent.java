@@ -246,14 +246,14 @@ public class TemplateComponent implements Cache, AdminContextPath {
     public boolean createContentFile(SysSite site, CmsContent entity, CmsCategory category, CmsCategoryModel categoryModel)
             throws IOException, TemplateException {
         if (null != site && null != entity) {
-            CmsModel model = modelComponent.getModel(site, entity.getModelId());
-            if (null != model && model.isOnlyUrl()) {
+            if (entity.isOnlyUrl()) {
                 if (null == entity.getParentId() && null != entity.getQuoteContentId()) {
                     CmsContent quote = contentService.getEntity(entity.getQuoteContentId());
                     if (null != quote) {
                         contentService.updateUrl(entity.getId(), quote.getUrl(), false);
                     }
                 }
+                return true;
             } else {
                 if (null == category) {
                     category = categoryService.getEntity(entity.getCategoryId());
@@ -270,6 +270,7 @@ public class TemplateComponent implements Cache, AdminContextPath {
                         contentPath = categoryModel.getContentPath();
                         templatePath = categoryModel.getTemplatePath();
                     } else {
+                        CmsModel model = modelComponent.getModel(site, entity.getModelId());
                         templatePath = model.getTemplatePath();
                         if (category.isCustomContentPath()) {
                             contentPath = category.getContentPath();
