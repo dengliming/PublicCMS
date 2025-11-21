@@ -32,22 +32,22 @@ subprojects {
         servletVersion = "6.1.0"
         // http://mvnrepository.com/artifact/org.springframework/spring-core
         // https://spring.io/projects/spring-framework
-        springVersion = "6.2.12"
+        springVersion = "7.0.1"
         // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web
         // https://spring.io/projects/spring-boot
-        springBootVersion = "3.5.6"
+        springBootVersion = "4.0.0"
         // https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine
-        junitVersion = "6.0.0"
+        junitVersion = "6.0.1"
         // http://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core
         // http://hibernate.org/orm/downloads/
-        hibernateVersion = "7.1.4.Final"
+        hibernateVersion = "7.1.9.Final"
         // http://mvnrepository.com/artifact/org.hibernate.tool/hibernate-tools-orm
-        hibernateToolsVersion = "7.1.4.Final"
+        hibernateToolsVersion = "7.1.8.Final"
         // https://mvnrepository.com/artifact/org.hibernate.search/hibernate-search-mapper-orm
         // http://hibernate.org/search/downloads/
         hibernateSearchVersion = "8.1.2.Final"
         // https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator
-        hibernateValidatorVersion = "9.0.1.Final"
+        hibernateValidatorVersion = "9.1.0.Final"
         // https://mvnrepository.com/artifact/org.ehcache/ehcache
         ehcacheVersion = "3.11.1"
         // http://mvnrepository.com/artifact/org.mybatis/mybatis
@@ -72,7 +72,7 @@ subprojects {
         jedisVersion = "7.1.0"
         // http://mvnrepository.com/artifact/org.quartz-scheduler/quartz
         // https://github.com/quartz-scheduler/quartz/releases
-        quartzVersion = "2.5.0"
+        quartzVersion = "2.5.1"
         // https://mvnrepository.com/artifact/com.zaxxer/HikariCP
         // https://github.com/brettwooldridge/HikariCP
         hikariCPVersion = "7.0.2"
