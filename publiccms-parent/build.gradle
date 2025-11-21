@@ -69,14 +69,14 @@ subprojects {
         // https://mvnrepository.com/artifact/org.mybatis.dynamic-sql/mybatis-dynamic-sql
         dynamicSqlVersion = "1.5.2"
         // http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
-        jacksonVersion = "2.20.0"
+        jacksonVersion = "2.20.1"
         // http://mvnrepository.com/artifact/org.freemarker/freemarker
         freemarkerVersion = "2.3.34"
         // https://mvnrepository.com/artifact/org.apache.lucene/lucene-analyzers-smartcn
         luceneVersion = "8.11.4"
         // http://mvnrepository.com/artifact/redis.clients/jedis
         // https://github.com/redis/jedis
-        jedisVersion = "7.0.0"
+        jedisVersion = "7.1.0"
         // http://mvnrepository.com/artifact/org.quartz-scheduler/quartz
         // https://github.com/quartz-scheduler/quartz/releases
         // 2.5 for jakarta
@@ -86,7 +86,7 @@ subprojects {
         // 5,6,7 for Java 11+
         hikariCPVersion = "4.0.3"
         // https://mvnrepository.com/artifact/com.mysql/mysql-connector-j
-        mysqlVersion = "9.4.0"
+        mysqlVersion = "9.5.0"
         // http://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
         // http://hc.apache.org/downloads.cgi
         httpclientVersion = "4.5.14"
@@ -94,21 +94,21 @@ subprojects {
         // 2.1.0 for Java 17+
         xhtmlConverterVersion = "2.0.6"
         // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
-        poiVersion = "5.4.1"
+        poiVersion = "5.5.0"
         // http://mvnrepository.com/artifact/commons-fileupload/commons-fileupload
         fileuploadVersion = "1.6.0"
         // http://mvnrepository.com/artifact/org.apache.commons/commons-collections4
         collectionsVersion = "4.5.0"
         // http://mvnrepository.com/artifact/org.apache.commons/commons-lang3
-        langVersion = "3.19.0"
+        langVersion = "3.20.0"
         // http://mvnrepository.com/artifact/commons-io/commons-io
-        ioVersion = "2.20.0"
+        ioVersion = "2.21.0"
         // https://mvnrepository.com/artifact/org.apache.commons/commons-text
         textVersion = "1.14.0"
         // https://mvnrepository.com/artifact/org.apache.commons/commons-compress
         compressVersion = "1.28.0"
         // http://mvnrepository.com/artifact/commons-codec/commons-codec
-        codecVersion = "1.19.0"
+        codecVersion = "1.20.0"
         // https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core
         log4jVersion = "2.25.2"
         // https://mvnrepository.com/artifact/com.drewnoakes/metadata-extractor
