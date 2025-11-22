@@ -60,7 +60,7 @@
         <version.freemarker>2.3.34</version.freemarker>
         <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
         <!-- 10 for java 21 https://lucene.apache.org/core/10_0_0/SYSTEM_REQUIREMENTS.html -->
-        <version.lucene>9.12.2</version.lucene>
+        <version.lucene>9.12.3</version.lucene>
         <!-- http://mvnrepository.com/artifact/redis.clients/jedis -->
         <!-- https://github.com/redis/jedis -->
         <version.jedis>7.1.0</version.jedis>
