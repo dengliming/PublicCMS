@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.http.MediaType;
-import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.HttpMessageConverters;
 import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
@@ -27,6 +27,7 @@ import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 import com.publiccms.common.api.AdminContextPath;
+import com.publiccms.common.constants.Constants;
 import com.publiccms.common.handler.FullBeanNameGenerator;
 import com.publiccms.common.view.AdminFreeMarkerView;
 import com.publiccms.interceptor.AdminContextInterceptor;
@@ -104,8 +105,9 @@ public class AdminConfig implements WebMvcConfigurer {
         bean.setLoginUrl("/login.html");
         bean.setUnauthorizedUrl("/common/unauthorizedUrl.html");
         bean.setLoginJsonUrl("/common/ajaxTimeout.html");
-        bean.setNeedNotLoginUrls(new String[] { "/changeLocale", "/login", "/logout", "/getCaptchaImage", "/otp/", "/webauthn/assertion/"});
-        bean.setNeedNotAuthorizedUrls(new String[] { "/index", "/main", "/common/", "/webauthn/login"  });
+        bean.setNeedNotLoginUrls(
+                new String[] { "/changeLocale", "/login", "/logout", "/getCaptchaImage", "/otp/", "/webauthn/assertion/" });
+        bean.setNeedNotAuthorizedUrls(new String[] { "/index", "/main", "/common/", "/webauthn/login" });
         return bean;
     }
 
@@ -143,14 +145,11 @@ public class AdminConfig implements WebMvcConfigurer {
     }
 
     @Override
-    public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
-        for (HttpMessageConverter<?> c : converters) {
-            if (c instanceof JacksonJsonHttpMessageConverter converter) {
-                List<MediaType> list = new ArrayList<>();
-                list.add(MediaType.TEXT_PLAIN);
-                list.add(MediaType.APPLICATION_JSON);
-                converter.setSupportedMediaTypes(list);
-            }
-        }
+    public void configureMessageConverters(HttpMessageConverters.ServerBuilder serverBuilder) {
+        JacksonJsonHttpMessageConverter bean = new JacksonJsonHttpMessageConverter(Constants.builder);
+        List<MediaType> list = new ArrayList<>();
+        list.add(MediaType.TEXT_PLAIN);
+        bean.setSupportedMediaTypes(list);
+        serverBuilder.addCustomConverter(bean);
     }
 }

@@ -13,6 +13,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import com.publiccms.common.constants.Constants;
 import com.publiccms.common.handler.FullBeanNameGenerator;
 import com.publiccms.interceptor.SiteInterceptor;
 
@@ -39,7 +40,7 @@ public class ApiConfig implements WebMvcConfigurer {
      */
     @Bean
     public JacksonJsonHttpMessageConverter jacksonJsonHttpMessageConverter() {
-        JacksonJsonHttpMessageConverter bean = new JacksonJsonHttpMessageConverter();
+        JacksonJsonHttpMessageConverter bean = new JacksonJsonHttpMessageConverter(Constants.builder);
         List<MediaType> list = new ArrayList<>();
         list.add(MediaType.TEXT_PLAIN);
         bean.setSupportedMediaTypes(list);
