@@ -6,6 +6,7 @@ import java.util.function.BinaryOperator;
 
 import org.apache.http.client.config.RequestConfig;
 
+import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.ObjectMapper;
 import tools.jackson.databind.SerializationFeature;
 import tools.jackson.databind.json.JsonMapper;
@@ -22,7 +23,9 @@ public abstract class Constants {
     /**
      * Json Mapper
      */
-    public static final ObjectMapper objectMapper = JsonMapper.builder().configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false).build();
+    public static final ObjectMapper objectMapper = JsonMapper.builder()
+            .configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false)
+            .configure(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES, false).build();
 
     /**
      * Default Request Config
