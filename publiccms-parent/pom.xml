@@ -62,7 +62,7 @@
         <!-- https://mvnrepository.com/artifact/org.mybatis.dynamic-sql/mybatis-dynamic-sql -->
         <version.dynamicSql>1.5.2</version.dynamicSql>
         <!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
-        <version.ehcache>3.10.8</version.ehcache>
+        <version.ehcache>3.11.1</version.ehcache>
         <!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
         <!-- 3.0 for Java 17+ -->
         <version.jackson>2.20.1</version.jackson>
