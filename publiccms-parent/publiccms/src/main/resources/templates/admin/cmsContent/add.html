@@ -22,7 +22,7 @@
             <li>
                 <label><input type="checkbox" name="draft" class="form-check-input"/><@t.page 'draft'/></label>
             </li>
-            <#if !category.workflowId?has_content>
+            <#if !(category.workflowId)?has_content>
         <@sys.authorized roleIds=admin.roles url='cmsContent/check'>
             <li>
                 <label>
@@ -118,7 +118,7 @@ $('input[name=\'categoryName\']',navTab.getCurrentPanel()).on('change',function(
                     <#else>
                         <input name="sort" type="hidden" value="${(a.sort)!0}"/>
                     </#if>
-                    <#if a.quoteContentId?has_content && !a.parentId?has_content><san class="statusText orange"><@t.page "content.quote"/></span></#if>
+                    <#if (a.quoteContentId)?has_content && !(a.parentId)?has_content><san class="statusText orange"><@t.page "content.quote"/></span></#if>
                     </dd>
                 </dl>
                 <dl<#if !fieldList?seq_contains('source')> class="copied hide"</#if>>
@@ -186,7 +186,7 @@ $('input[name=\'categoryName\']',navTab.getCurrentPanel()).on('change',function(
                         <input name="cover" class="preview<#if requiredFieldList?seq_contains('cover')> required</#if>" value="${(a.cover)!}" maxlength="300" size="50" type="text"/>
                         <a class="btnAttach" href="common/upload.html?field=cover&fileTypes=image&width=${(model.coverWidth)!}&height=${(model.coverHeight)!}" lookupGroup="" width="1000" height="600">${(model.fieldTextMap['cover'])!}</a>
                         <a class="view icon-eye-open" ref="cover" data-prefix="${getFileUploadPrefix()}" href="javascript:void(0);" target="_blank"><@t.page 'button.view'/></a>
-                        <label><a class="button" href="cmsContent/contentImage.html" lookupGroup="" width="1000" height="600"><@t.page 'button.fillcover' t.pageMessage('editor')/></a></label>
+                        <label><a class="button" href="cmsContent/contentImage.html" lookupGroup="" width="1000" height="600"><@t.page 'button.fillcover'/></a></label>
                         <#if (model.coverWidth)?has_content && (model.coverHeight)?has_content><span class="info">${(model.coverWidth)!}*${(model.coverHeight)!}</span></#if>
                     </dd>
                 </dl>
