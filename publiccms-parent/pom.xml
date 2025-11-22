@@ -54,8 +54,8 @@
         <version.dynamicSql>1.5.2</version.dynamicSql>
         <!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
         <version.ehcache>3.11.1</version.ehcache>
-        <!-- http://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
-        <version.jackson>2.20.1</version.jackson>
+        <!-- https://mvnrepository.com/artifact/tools.jackson.core/jackson-databind -->
+        <version.jackson>3.0.2</version.jackson>
         <!-- http://mvnrepository.com/artifact/org.freemarker/freemarker -->
         <version.freemarker>2.3.34</version.freemarker>
         <!-- https://mvnrepository.com/artifact/org.apache.lucene/lucene-core -->
@@ -299,12 +299,12 @@
                 <version>${version.freemarker}</version>
             </dependency>
             <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
+                <groupId>tools.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
                 <version>${version.jackson}</version>
             </dependency>
             <dependency>
-                <groupId>com.fasterxml.jackson.core</groupId>
+                <groupId>tools.jackson.core</groupId>
                 <artifactId>jackson-core</artifactId>
                 <version>${version.jackson}</version>
             </dependency>
