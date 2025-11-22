@@ -5,8 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-import jakarta.annotation.Resource;
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -14,7 +12,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.core.task.AsyncTaskExecutor;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
+import org.springframework.http.converter.json.JacksonJsonHttpMessageConverter;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.context.request.async.CallableProcessingInterceptor;
@@ -28,14 +26,14 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.CookieLocaleResolver;
 import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
-import com.fasterxml.jackson.databind.module.SimpleModule;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import com.publiccms.common.api.AdminContextPath;
 import com.publiccms.common.handler.FullBeanNameGenerator;
 import com.publiccms.common.view.AdminFreeMarkerView;
 import com.publiccms.interceptor.AdminContextInterceptor;
 import com.publiccms.interceptor.CsrfInterceptor;
 import com.publiccms.logic.component.cache.CacheComponent;
+
+import jakarta.annotation.Resource;
 
 /**
  * AdminServlet配置类
@@ -147,15 +145,11 @@ public class AdminConfig implements WebMvcConfigurer {
     @Override
     public void extendMessageConverters(List<HttpMessageConverter<?>> converters) {
         for (HttpMessageConverter<?> c : converters) {
-            if (c instanceof MappingJackson2HttpMessageConverter converter) {
+            if (c instanceof JacksonJsonHttpMessageConverter converter) {
                 List<MediaType> list = new ArrayList<>();
                 list.add(MediaType.TEXT_PLAIN);
                 list.add(MediaType.APPLICATION_JSON);
                 converter.setSupportedMediaTypes(list);
-                SimpleModule module = new SimpleModule();
-                module.addSerializer(Long.class, ToStringSerializer.instance);
-                module.addSerializer(Long.TYPE, ToStringSerializer.instance);
-                converter.getObjectMapper().registerModule(module);
             }
         }
     }
