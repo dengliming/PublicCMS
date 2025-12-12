@@ -66,6 +66,7 @@ import com.publiccms.logic.component.config.SiteConfigComponent;
 import com.publiccms.logic.component.exchange.ContentExchangeComponent;
 import com.publiccms.logic.component.exchange.ContentExportComponent;
 import com.publiccms.logic.component.exchange.SiteExchangeComponent;
+import com.publiccms.logic.component.site.FileUploadComponent;
 import com.publiccms.logic.component.site.SiteComponent;
 import com.publiccms.logic.component.site.StatisticsComponent;
 import com.publiccms.logic.component.template.ModelComponent;
@@ -127,6 +128,8 @@ public class CmsContentAdminController {
     private ContentExportComponent exportComponent;
     @Resource
     private StatisticsComponent statisticsComponent;
+    @Resource
+    protected FileUploadComponent fileUploadComponent;
     @Resource
     private SysWorkflowProcessItemService workflowProcessItemService;
     @Resource
@@ -852,7 +855,10 @@ public class CmsContentAdminController {
                     }
 
                     if (0 != userId) {
-                        CmsUrlUtils.initContentUrl(site, entity);
+                        if(category.getSiteId() != site.getId()) {
+                            CmsUrlUtils.initContentUrl(site, entity);
+                            fileUploadComponent.initContentCover(site, entity);
+                        }
                         CmsContent content = service.copy(site, entity, category, status, userId);
                         if (null != content) {
                             try {
